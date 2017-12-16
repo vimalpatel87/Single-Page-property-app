@@ -20,7 +20,7 @@
 
               <div class="form-row mb-2">
                 <div class="col">
-                  <label class="col-form-label text-right" for="searchQuery">search {{ 'for ' + searchQuery }}</label>
+                  <label class="col-form-label text-right" for="searchQuery">search <span ng-if="searchQuery">{{ 'for ' + searchQuery }}</span></label>
                 </div><!-- label -->
                 
                 <div class="col-12">
@@ -36,12 +36,12 @@
 <div class="artist-list container">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-9 col-md-7 col-lg-5">
-      <ul class=" list-group d-flex">
-        <li class="list-group-item">
+      <ul class=" list-group d-flex" ng-if="searchQuery">
+        <li class="list-group-item" ng-repeat="property in properties | filter:{name : searchQuery}">
 
             <div class="media d-flex align-items-center">
               <img class="rounded-circle mr-3"
-                src="images/{{ property.shortname }}_tn.jpg"
+                ng-src="images/{{ property.shortname }}_tn.jpg"
                 alt="Photo of ">
               <div class="media-body">
                 <h5 class="my-0 text-dark">{{ property.name}}</h5>
