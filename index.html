@@ -37,14 +37,14 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-9 col-md-7 col-lg-5">
       <ul class=" list-group d-flex" ng-if="searchQuery">
-        <li class="list-group-item" ng-repeat="property in properties | filter:{name : searchQuery}">
+        <li class="list-group-item" ng-repeat="property in properties | filter:{name : searchQuery} | orderBy : 'name'">
 
             <div class="media d-flex align-items-center">
               <img class="rounded-circle mr-3"
                 ng-src="images/{{ property.shortname }}_tn.jpg"
                 alt="Photo of ">
               <div class="media-body">
-                <h5 class="my-0 text-dark">{{ property.name}}</h5>
+                <h5 class="my-0 text-dark">{{ property.name | uppercase}}</h5>
                 <div class="text-secondary font-italic">{{ property.reknown}}</div>
               </div><!-- media-body -->
             </div><!-- media -->
