@@ -47,7 +47,7 @@
                 ng-src="images/{{ property.shortname }}_tn.jpg"
                 alt="Photo of ">
               <div class="media-body">
-                <h5 class="my-0 text-dark">{{ property.name | uppercase}}</h5>
+                <h5 class="my-0 text-dark"><a href="#/details/{{properties.indexOf(property)}}">{{ property.name | uppercase}}</a></h5>
                 <div class="text-secondary font-italic">{{ property.reknown}}</div>
               </div><!-- media-body -->
             </div><!-- media -->
